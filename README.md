@@ -3,6 +3,7 @@ restful web service with Flask
 
 reference: https://flask-restful.readthedocs.io/en/latest/quickstart.html
 
+___
 Run the service:
 ```
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
@@ -12,8 +13,7 @@ Run the service:
 127.0.0.1 - - [12/Nov/2017 01:12:01] "POST /library/api/v1.0/books HTTP/1.1" 201 -
 127.0.0.1 - - [12/Nov/2017 01:13:07] "GET /library/api/v1.0/books HTTP/1.1" 200 -
 ```
-
-
+___
 GET all books
 ```
 curl -i http://localhost:5000/library/api/v1.0/books
@@ -45,7 +45,7 @@ Date: Sat, 11 Nov 2017 23:45:30 GMT
 }
 ```
 
-
+___
 GET one book
 ```
 curl -i http://localhost:5000/library/api/v1.0/book/1
@@ -66,7 +66,7 @@ Date: Sat, 11 Nov 2017 23:39:54 GMT
     }
 }
 ```
-
+___
 DELETE one book
 ```
 curl http://localhost:5000/library/api/v1.0/book/2 -X DELETE -v
@@ -88,10 +88,10 @@ curl http://localhost:5000/library/api/v1.0/book/2 -X DELETE -v
 <
 * Closing connection 0
 ```
-
+___
 UPDATE one book
 ```
-curl --header "Content-Type: application/json" --request PUT --data '{"title":"Options, Futures and other derivatives","author":"John Hull","cover":"PaperBack"}' http://localhost:5000/library/api/v1.0/book/3 -X PUT -v
+curl --header "Content-Type: application/json" --request PUT --data '{"title":"Options, Futures and other derivatives","author":"John Hull","cover":"PaperBack"}' http://localhost:5000/library/api/v1.0/book/3  -v
 ```
 
 ```
@@ -118,7 +118,7 @@ curl --header "Content-Type: application/json" --request PUT --data '{"title":"O
 }
 * Closing connection 0
 ```
-
+___
 CREATE a new book
 ```
 curl --header "Content-Type: application/json" --request POST --data '{"title":"Les miserables","author":"Victor Hugo","cover":"PaperBack"}' http://localhost:5000/library/api/v1.0/books -v

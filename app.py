@@ -46,7 +46,7 @@ class Book(Resource):
         return '', HTTPStatus.NO_CONTENT
 
     def put(self, book_id):
-        args = parser.parse_args()
+        args = parser.parse_args(strict=True)
         book = {'title': args['title'],
                 'author': args['author'],
                 'cover': args['cover']}
@@ -59,7 +59,7 @@ class BookList(Resource):
         return books
 
     def post(self):
-        args = parser.parse_args()
+        args = parser.parse_args(strict=True)
         book = {'title': args['title'],
                 'author': args['author'],
                 'cover': args['cover']}
